@@ -1,0 +1,11 @@
+---
+applications:
+- name: dashboard-nodejs
+  host: dashboard-${random-word}
+  memory: 256M
+  env:
+    NODE_ENV: cloud-foundry
+    COLUMN_IDS: RID,UID,id
+  services:
+    - dashboard-nodejs-dde
+    - dashboard-nodejs-cos

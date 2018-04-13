@@ -1,0 +1,83 @@
+<div fxFill fxLayout="column">
+  <!-- header -->
+  <div fxFlex="20">
+    <div fxLayout="row" fxLayoutAlign="space-around" class="toolbar-row">
+      <!-- title -->
+      <div fxFlex="30" fxLayoutAlign="begin center">
+        <h2>{{title}}</h2>
+      </div>
+
+      <!-- toolbar -->
+      <div fxFlex fxLayoutAlign="end none">
+        <div class="action-row" fxLayout="row" fxLayoutAlign="end center">
+          <app-toolbar class="toolbar-button"></app-toolbar>
+          <app-login class="toolbar-button"></app-login>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ibm dynamic dashboard embedded will load here -->
+  <div #dynamicDashboardEmbedded fxFill id="app-dde"></div>
+
+  <!-- loading dialog shown until DDE is ready -->
+  <div *ngIf="cognosApi === undefined" class="bx--loading-overlay">
+    <div data-loading class="bx--loading">
+      <svg class="bx--loading__svg" viewBox="-75 -75 150 150">
+        <title>Loading</title>
+        <circle cx="0" cy="0" r="37.5" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- add datasources modal -->
+  <div #datasourceModal data-modal id="datasourceModal" class="bx--modal" tabindex="-1">
+    <div class="bx--modal-container">
+      <div class="bx--modal-header">
+        <p class="bx--modal-header__heading bx--type-beta">Available datasources</p>
+        <button class="bx--modal-close" type="button" data-modal-close aria-label="close modal">
+          <svg class="bx--modal-close__icon" width="10" height="10" viewBox="0 0 10 10" fill-rule="evenodd">
+            <title>Close</title>
+            <path d="M9.8 8.6L8.4 10 5 6.4 1.4 10 0 8.6 3.6 5 .1 1.4 1.5 0 5 3.6 8.6 0 10 1.4 6.4 5z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="bx--modal-content">
+        <ul data-accordion class="bx--accordion">
+          <li *ngFor="let folder of folders" (click)="getDatasources(folder)" data-accordion-item class="bx--accordion__item">
+            <button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane1">
+              <svg class="bx--accordion__arrow" width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
+                <path d="M0 10.6L4.7 6 0 1.4 1.4 0l6.1 6-6.1 6z"></path>
+              </svg>
+              <!-- folder names -->
+              <p class="bx--accordion__title" (click)="getDatasources(folder)">{{folder}}</p>
+            </button>
+            <div id="{{folder}}" class="bx--accordion__content">
+              <!-- show loading while retrieve datasources -->
+              <div *ngIf="!datasources[folder]" class="bx--loading-overlay">
+                <div data-loading class="bx--loading">
+                  <svg class="bx--loading__svg" viewBox="-75 -75 150 150">
+                    <title>Loading</title>
+                    <circle cx="0" cy="0" r="37.5" />
+                  </svg>
+                </div>
+              </div>
+              
+              <!-- show the datasources -->
+              <table *ngIf="datasources[folder]" class="bx--data-table-v2 bx--data-table-v2--zebra">
+                <tbody>
+                  <tr *ngFor="let source of datasources[folder]" (click)="addDatasource(source, folder)">
+                    <td>
+                      {{source}}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

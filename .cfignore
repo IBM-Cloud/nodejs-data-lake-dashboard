@@ -1,0 +1,17 @@
+# Files listed here will not be deployed to IBM Cloud. Similar to .gitignore function
+
+.vscode/
+.editorconfig
+.eslintrc.json
+.github/
+.git/
+.gitignore
+node_modules/
+*.DS_Store
+README.md
+logs
+*.log
+src/
+tsconfig.json
+tslint.json
+vcap-services.json

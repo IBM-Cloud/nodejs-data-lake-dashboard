@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    height: 800px;
+}
+
+.toolbar-row {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+  }
+
+.toolbar-button {
+    margin-left: 2px;
+    margin-right: 2px;
+}

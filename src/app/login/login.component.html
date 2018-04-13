@@ -1,0 +1,3 @@
+<span *ngIf="profile">Hi, {{profile.name}}</span>
+<a *ngIf="enabled && (profile === undefined)" class="bx--btn bx--btn--secondary" 
+  type="button" [href]="loginService.getLoginUrl()">Login</a>
