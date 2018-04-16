@@ -28,6 +28,22 @@ The solution uses [Express](http://expressjs.com/) to deliver IBM Cloud services
 | DB2 Warehouse on Cloud     | dashboard-nodejs-db2   | server-db2.js   | Provides DDE compatible datasources (with encryption) |
 | Dynamic Dashboard Embedded | dashboard-nodejs-dde   | server-dde.js   | Provides DDE sessions for web client                  |
 
+Ensure that the `manifest.yml` file contains entries for corresponding services. By default, the solution is configured with Object Storage.
+
+```
+services:
+  - dashboard-nodejs-dde
+  - dashboard-nodejs-cos
+```
+
+To use DB2, make the following change.
+
+```
+services:
+  - dashboard-nodejs-dde
+  - dashboard-nodejs-db2
+```
+
 ## Client-side
 
 The client is an Angular web client that automatically sets up a Dynamic Dashboard Embedded (DDE) session. Data for DDE can come from either IBM Cloud Object Storage or DB2 Warehouse on Cloud. Two `DDEAdapter` adapters exist to support these two backends, which will be loaded depending on whether the respective service is available on the server. Similarly, a `Login` button will load when the AppID service is available.
