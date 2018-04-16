@@ -48,7 +48,7 @@ export class DDEService {
           this.adapter = cosAdapter;
         } else {
           console.log('Using DB2 Warehouse adapter')
-          this.db2Adapter = db2Adapter;
+          this.adapter = db2Adapter;
         }
 
         if (services.cloudObjectStorage && services.db2) {

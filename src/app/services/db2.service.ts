@@ -20,9 +20,17 @@ export class DB2Service implements DDEAdapter {
     return ['BLUDB'];
   }
 
-  async getDatasources(): Promise<string[]> {
-    const data: any = await this.http.get(`${this.db2Url}/tables`).toPromise();
-    return data.resources;
+  async getDatasources(folder?: string): Promise<string[]> {
+    const url = `${this.db2Url}/tables`;
+
+    console.log(`Requesting objects from ${url}`);
+
+    const data: any = await this.http.get(url).toPromise();
+    const names: string[] = data.resources.map(object => object.name);
+
+    console.log(`Objects received: ${names}`);
+
+    return names;
   }
 
   getDatasourceModule(name: string, folder?: string): Promise<any> {
