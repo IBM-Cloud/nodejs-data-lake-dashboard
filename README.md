@@ -1,4 +1,4 @@
-# Data Dashboard
+# Data Lake Dashboard
 
 Sample and tutorial that creates interactive dashboards using: Dynamic Dashboard Embedded, Cloud Object Storage, SQL Query, DB2 Warehouse and AppID. Not all services are required, see tutorials for possible use cases and guidance.
 
