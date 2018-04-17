@@ -17,5 +17,5 @@ export const environment = {
   db2Route: '/api/db2',
   cosRoute: '/api/cos',
   servicesRoute: '/api/services',
-  sourceUrl: 'https://52f6666c.ngrok.io',
+  sourceUrl: '<replace_with_tunnel_url>',
 };
