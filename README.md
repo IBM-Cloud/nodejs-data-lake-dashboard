@@ -4,7 +4,7 @@ Sample and tutorial that creates interactive dashboards using: Dynamic Dashboard
 
 ![Application](images/dashboard-chart.png)
 
-The solution works out of the box when following the [Build a smart data lake]() tutorial. For customization, see the below notes.
+The solution works out of the box when following the [Build a data lake using object storage](https://console.bluemix.net/docs/tutorials/smart-data-lake.html) tutorial. For customization, see the below notes.
 
 ## Running the solution
 
