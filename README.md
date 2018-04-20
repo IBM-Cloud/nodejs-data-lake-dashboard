@@ -6,9 +6,16 @@ Sample and tutorial that creates interactive dashboards using: Dynamic Dashboard
 
 The solution works out of the box when following the [Build a data lake using object storage](https://console.bluemix.net/docs/tutorials/smart-data-lake.html) tutorial. For customization, see the below notes.
 
+## Helpful starting points
+
+- Supports either Cloud Object Storage or DB2 Warehouse on Cloud
+- Dynamically reads CSV files and builds Dynamic Dashboard Embedded datasources
+- Server-side encryption support for Dynamic Dashboard Embedded datasources
+- Scope DB2 table data to specific users with App ID
+
 ## Running the solution
 
-This solution uses an Angular web cient and server to provide APIs and host the web app. Before hosting in production, you must build the Angular web client.
+This solution uses an Angular web client and server to provide APIs and host the web app. Before hosting in production, you must build the Angular web client.
 
 | Command       | Usage                                           |
 |---------------|-------------------------------------------------|
