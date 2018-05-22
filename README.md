@@ -1,6 +1,6 @@
 # Data Lake Dashboard
 
-Sample and tutorial that creates interactive dashboards using: Dynamic Dashboard Embedded, Cloud Object Storage, SQL Query, DB2 Warehouse and AppID. Not all services are required, see tutorials for possible use cases and guidance.
+Sample and tutorial that creates interactive dashboards using: Cognos Dashboard Embedded, Cloud Object Storage, SQL Query, DB2 Warehouse and AppID. Not all services are required, see tutorials for possible use cases and guidance.
 
 ![Application](images/dashboard-chart.png)
 
@@ -9,8 +9,8 @@ The solution works out of the box when following the [Build a data lake using ob
 ## Helpful starting points
 
 - Supports either Cloud Object Storage or DB2 Warehouse on Cloud
-- Dynamically reads CSV files and builds Dynamic Dashboard Embedded datasources
-- Server-side encryption support for Dynamic Dashboard Embedded datasources
+- Dynamically reads CSV files and builds Cognos Dashboard Embedded datasources
+- Server-side encryption support for Cognos Dashboard Embedded datasources
 - Scope DB2 table data to specific users with App ID
 
 ## Running the solution
@@ -33,7 +33,7 @@ The solution uses [Express](http://expressjs.com/) to deliver IBM Cloud services
 | AppID                      | dashboard-nodejs-appid | server-appid.js | Provides authentication support for web client        |
 | Cloud Object Storage       | dashboard-nodejs-cos   | server-cos.js   | Provides DDE compatible datasources                   |
 | DB2 Warehouse on Cloud     | dashboard-nodejs-db2   | server-db2.js   | Provides DDE compatible datasources (with encryption) |
-| Dynamic Dashboard Embedded | dashboard-nodejs-dde   | server-dde.js   | Provides DDE sessions for web client                  |
+| Cognos Dashboard Embedded | dashboard-nodejs-dde   | server-dde.js   | Provides DDE sessions for web client                  |
 
 Ensure that the `manifest.yml` file contains entries for corresponding services. By default, the solution is configured with Object Storage.
 
@@ -53,7 +53,7 @@ services:
 
 ## Client-side
 
-The client is an Angular web client that automatically sets up a Dynamic Dashboard Embedded (DDE) session. Data for DDE can come from either IBM Cloud Object Storage or DB2 Warehouse on Cloud. Two `DDEAdapter` adapters exist to support these two backends, which will be loaded depending on whether the respective service is available on the server. Similarly, a `Login` button will load when the AppID service is available.
+The client is an Angular web client that automatically sets up a Cognos Dashboard Embedded (DDE) session. Data for DDE can come from either IBM Cloud Object Storage or DB2 Warehouse on Cloud. Two `DDEAdapter` adapters exist to support these two backends, which will be loaded depending on whether the respective service is available on the server. Similarly, a `Login` button will load when the AppID service is available.
 
 After a user has authored a dashboard, the dashboard can be saved and restored from browser storage.
 
@@ -67,7 +67,7 @@ During development use the `dev` script. This will launch `ng serve` and `nodemo
 2. Run `npm run dev`.
 3. Browse to http://localhost:4200. If Express is not listening on http://localhost:6008, update the properties in `/src/environments/environment.ts`.
 
-The Dynamic Dashboard Embedded service connects directly to CSV or JDBC datasources via a public URLs. To support access during local development, you should use a tool like [ngrok](https://ngrok.com/) to open a tunnel to the Express server. The `sourceUrl` property should be updated to reflect the ngrok URL in `/src/environments/environment.ts`.
+The Cognos Dashboard Embedded service connects directly to CSV or JDBC datasources via a public URLs. To support access during local development, you should use a tool like [ngrok](https://ngrok.com/) to open a tunnel to the Express server. The `sourceUrl` property should be updated to reflect the ngrok URL in `/src/environments/environment.ts`.
 
 ## License
 
