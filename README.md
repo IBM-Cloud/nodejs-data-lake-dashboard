@@ -61,7 +61,7 @@ After a user has authored a dashboard, the dashboard can be saved and restored f
 During development use the `dev` script. This will launch `ng serve` and `nodemon` to automatically restart the app when changes occur.
 
 1. Copy the VCAP_SERVICES to the local sample application.
-  - In the browser, go to https://console.bluemix.net/dashboard/apps and select the deployed `dashboard-nodejs` application. Click **Runtime** -> **Environment variables**. Alternatively, use the command `bx app env dashboard-nodejs` to view environment variables.
+  - In the browser, go to https://console.bluemix.net/dashboard/apps and select the deployed `dashboard-nodejs` application. Click **Runtime** -> **Environment variables**. Alternatively, use the command `ibmcloud app env dashboard-nodejs` to view environment variables.
   - Copy the VCAP_SERVICES to the clipboard using the copy button.
   - Paste the VCAP_SERVICES content to the sample applications `vcap-services.json` file overwriting existing content and save.
 2. Run `npm run dev`.
