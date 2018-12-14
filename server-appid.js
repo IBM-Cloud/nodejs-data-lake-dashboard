@@ -1,6 +1,6 @@
 const cfenv = require('cfenv');
 const passport = require('passport');
-const { WebAppStrategy } = require('bluemix-appid');
+const { WebAppStrategy } = require('ibmcloud-appid');
 
 // default routes to trigger OAuth and handle IBM App ID callback
 const defaultRoutes = {

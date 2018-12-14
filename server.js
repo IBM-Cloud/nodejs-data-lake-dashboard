@@ -1,6 +1,5 @@
 require('dotenv').config(); // used to get logging level
 
-const appId = require('./server-appid');
 const bodyParser = require('body-parser');
 const cfenv = require('cfenv');
 const cors = require('cors');
@@ -51,6 +50,9 @@ const servicesUsed = {
 const appIdService = appEnv.getService('dashboard-nodejs-appid');
 if (appIdService) {
   servicesUsed.appId = true;
+  
+  // ibmcloud-appid is optional
+  const appId = require('./server-appid');
   appId.configure(app, appIdService);
 } else {
   logger.warn('AppID not found in VCAP_SERVICES');
