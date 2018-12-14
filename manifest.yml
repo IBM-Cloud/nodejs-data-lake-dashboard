@@ -1,7 +1,8 @@
 ---
 applications:
 - name: dashboard-nodejs
-  host: dashboard-${random-word}
+  random-route: true
+  host: 
   memory: 256M
   env:
     NODE_ENV: cloud-foundry
