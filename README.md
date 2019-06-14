@@ -4,7 +4,7 @@ Sample and tutorial that creates interactive dashboards using: Cognos Dashboard 
 
 ![Application](images/dashboard-chart.png)
 
-The solution works out of the box when following the [Build a data lake using object storage](https://console.bluemix.net/docs/tutorials/smart-data-lake.html) tutorial. For customization, see the below notes.
+The solution works out of the box when following the [Build a data lake using object storage](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-smart-data-lake) tutorial. For customization, see the below notes.
 
 ## Helpful starting points
 
@@ -76,4 +76,3 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
-
