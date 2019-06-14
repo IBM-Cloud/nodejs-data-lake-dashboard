@@ -15,8 +15,8 @@ import { StorageService } from '../services/storage.service';
   ],
 })
 export class ToolbarComponent {
-  @ViewChild('saveModal') saveModal: ElementRef;
-  @ViewChild('openModal') openModal: ElementRef;
+  @ViewChild('saveModal',{static:false}) saveModal: ElementRef;
+  @ViewChild('openModal',{static:false}) openModal: ElementRef;
 
   // the mode of the current dashboard from dashboardApi.MODES
   mode = 0;
@@ -31,9 +31,9 @@ export class ToolbarComponent {
   specJson: any;  // serialized output of a dashboard spec
 
   constructor(
-    private ddeService: DDEService, 
+    private ddeService: DDEService,
     private storageService: StorageService,
-  ) { 
+  ) {
 
   }
 
@@ -86,7 +86,7 @@ export class ToolbarComponent {
   }
 
   /**
-   * Updates the spec seen in the save modal. 
+   * Updates the spec seen in the save modal.
    */
   async refreshSpec() {
     const spec = await this.ddeService.dashboard().getSpec();

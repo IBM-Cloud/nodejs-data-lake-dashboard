@@ -12,15 +12,15 @@ import { StorageService } from './services/storage.service';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  @ViewChild('dynamicDashboardEmbedded') DDE: ElementRef;
-  @ViewChild('datasourceModal') datasourceModal: ElementRef;
+  @ViewChild('dynamicDashboardEmbedded',{static:false}) DDE: ElementRef;
+  @ViewChild('datasourceModal',{static:false}) datasourceModal: ElementRef;
 
   title  = '';
 
   cognosApi: any;
 
   folders: string[] = []; // folders (e.g. bucket or DB2 databases)
-  datasources: any = { 
+  datasources: any = {
     // folder: string[]
   }; // datasources loaded by the user
 
@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     document.title = this.title;
-    
+
     // check if this app is also using AppID to provide authentication support
     const appIdEnabled = await this.loginService.isEnabled();
 
@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
       if (appIdEnabled) {
         // determine if th user is logged in
         const user = await this.loginService.getUser();
-        
+
         // if the user is logged in, show a pre-built dashboard
         if(user.logged) {
           const spec = await this.ddeService.getDefaultDashboard();
@@ -70,9 +70,9 @@ export class AppComponent implements OnInit {
           // for convenience, add the user's default datasource if logged in
           if (appIdEnabled) {
             const user = await this.loginService.getUser();
-            
+
             if(user.logged) {
-              this.addDatasource(); 
+              this.addDatasource();
             }
           }
 
@@ -105,7 +105,7 @@ export class AppComponent implements OnInit {
    */
   bindDatasourceModal() {
    const dashboardApi = this.ddeService.dashboard();
- 
+
     dashboardApi.on('addSource:clicked', () => {
       this.ddeService.getFolders()
       .then(data => {
