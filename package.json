@@ -41,7 +41,7 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.800.2",
+    "@angular-devkit/build-angular": "^0.803.19",
     "@angular/cdk": "^8.0.1",
     "@angular/cli": "^8.0.2",
     "@angular/common": "^8.0.0",
