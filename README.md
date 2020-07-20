@@ -4,7 +4,7 @@ Sample and tutorial that creates interactive dashboards using: Cognos Dashboard 
 
 ![Application](images/dashboard-chart.png)
 
-The solution works out of the box when following the [Build a data lake using object storage](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-smart-data-lake) tutorial. For customization, see the below notes.
+The solution works out of the box when following the [Build a data lake using object storage](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-smart-data-lake) tutorial. For customization, see the below notes.
 
 ## Helpful starting points
 
