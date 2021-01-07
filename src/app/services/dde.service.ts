@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { CookieService, CookieOptions } from 'ngx-cookie';
 import { Observable } from 'rxjs';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { COSService } from "./cos.service";
