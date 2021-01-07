@@ -1,3 +1,5 @@
+**Note: This code is no longer maintained, but kept as reference.**
+
 # Data Lake Dashboard
 
 Sample and tutorial that creates interactive dashboards using: Cognos Dashboard Embedded (formerly Dynamic Dashboard Embedded), Cloud Object Storage, SQL Query, DB2 Warehouse and AppID. Not all services are required, see tutorials for possible use cases and guidance.
